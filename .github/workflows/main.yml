@@ -2,7 +2,7 @@
 name: Build and deploy ₠Quantum site
 
 # 💎 Runs on workflow_run.conclusion
-on: # push
+on:
   workflow_run:
     types: [completed] #requested
     workflows: ["pages-build-deployment"]
@@ -17,7 +17,8 @@ env:
   USER: ${{ github.actor }}
   REPO: ${{ github.repository }}
   OWNER: ${{ github.repository_owner }}
-
+  ACTOR: ${{ github.triggering_actor }}
+  
 jobs:
   # Build job
   github-pages:
