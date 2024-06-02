@@ -10,7 +10,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./app
+    working-directory: ./_site
   
 # 🪂 Allow concurrent deployment
 concurrency:
@@ -68,5 +68,5 @@ jobs:
         if: runner.os == 'Linux'
         uses: eq19/maps@v1
         with:
-          path-to-root: .app/_site
+          path-to-root: ./_site
           include-pdf: false
