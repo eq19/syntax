@@ -82,8 +82,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          sparse-checkout: 'drivers/gpu/drm/nouveau/nvkm/subdev/i2c/aux.c'
- 
+          sparse-checkout: |
+            '!drivers/gpu/drm/nouveau/nvkm/subdev/i2c/aux.c'
+            '!include/uapi/linux/netfilter/*'
+            '!include/uapi/linux/netfilter_ipv4/*'
+            '!include/uapi/linux/netfilter_ipv6/*'
+            '!net/netfilter/*'
+
       - name: 💎 Setup Dotnet
         uses: actions/setup-dotnet@v4
         with:
