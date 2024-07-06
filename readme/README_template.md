@@ -59,7 +59,7 @@ To use this action with all inputs set to their default value, just use its name
 _**Example:**_
 
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
 ```
 
 This will first check whether the distribution is installed already. If not, it will be installed and also
@@ -122,7 +122,7 @@ defaults:
         shell: wsl-bash {0}
 
 steps:
-    - uses: Vampire/setup-wsl@v3
+    - uses: Vampire/setup-wsl@v$majorVersion
 
     - run: |
           npm ci
@@ -164,7 +164,7 @@ The values currently supported by this action are:
 
 _**Example:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       distribution: Ubuntu-18.04
 ```
@@ -181,7 +181,7 @@ space of the repository. Refer to [`actions/cache` documentation][actions/cache 
 
 _**Example:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       use-cache: 'false'
 ```
@@ -202,7 +202,7 @@ its contents in your configured value.
 
 _**Example:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       wsl-conf: |
           [automount]
@@ -221,7 +221,7 @@ This can also be used if the distribution is installed already.
 
 _**Example:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       set-as-default: 'false'
 ```
@@ -235,7 +235,7 @@ This can also be used if the distribution is installed already.
 
 _**Example:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       update: 'true'
 ```
@@ -249,7 +249,7 @@ This can also be used if the distribution is installed already.
 
 _**Example:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       additional-packages:
           dos2unix
@@ -267,7 +267,7 @@ it is automatically added.
 
 _**Example:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       wsl-shell-user: test
 ```
@@ -298,7 +298,7 @@ scripts, the [`wsl-shell-wrapper-path` output](#wsl-shell-wrapper-path) and
 
 _**Examples:**_
 ```yaml
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       wsl-shell-command: ash -eu
 
@@ -309,21 +309,21 @@ _**Examples:**_
   run: |
       useradd -m -p 4qBD5NWD3IkbU test
 
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
-      wsl-shell-command: bash -c "sudo -u test bash --noprofile --norc -euo pipefail "\
+      wsl-shell-command: bash -c "sudo -u test bash --noprofile --norc -euo pipefail "\\
 
 - shell: wsl-bash {0}
   run: id
 
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
       wsl-shell-command: bash -c "sudo -u test bash --noprofile --norc -euo pipefail '{0}'"
 
 - shell: wsl-bash {0}
   run: id
 
-- uses: Vampire/setup-wsl@v3
+- uses: Vampire/setup-wsl@v$majorVersion
   with:
     wsl-shell-command: bash -c "cd && bash --noprofile --norc -euo pipefail '{0}'"
 
@@ -331,7 +331,7 @@ _**Examples:**_
   run: pwd
 
 - shell: cmd
-  run: DEL /F "${{ steps.execute_action.outputs.wsl-shell-wrapper-path }}"
+  run: DEL /F "\${{ steps.execute_action.outputs.wsl-shell-wrapper-path }}"
 ```
 
 
