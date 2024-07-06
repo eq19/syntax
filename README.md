@@ -1,4 +1,4 @@
-Setup WSL
+[Setup WSL](https://github.com/vampire/setup-wsl)
 =========
 
 [![Version][Version Badge]][Latest Release]
