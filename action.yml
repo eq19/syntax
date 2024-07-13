@@ -108,5 +108,18 @@ outputs:
             wsl-shell-command is not set explicitly and the script already exists, this output will be set.
 
 runs:
-    using: node20
-    main: build/distributions/index.js
+    #using: node20
+    #main: build/distributions/index.js
+
+defaults:
+    run:
+        shell: wsl-bash {0}
+
+steps:
+    - uses: ./
+      if: runner.os == 'Windows'
+      
+    - run: |
+          npm ci
+          npm run build
+          npm run package
