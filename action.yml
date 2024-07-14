@@ -108,10 +108,10 @@ outputs:
             wsl-shell-command is not set explicitly and the script already exists, this output will be set.
 
 runs:
-    #using: node20
-    #main: build/distributions/index.js
-
-steps:
+  #using: node20
+  #main: build/distributions/index.js
+  using: composite
+  steps:
     - uses: ./
         with:
           wsl-conf: |
