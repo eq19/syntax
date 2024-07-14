@@ -110,9 +110,6 @@ outputs:
 runs:
   #using: node20
   #main: build/distributions/index.js
-  defaults:
-    run:
-      shell: bash
   using: composite
   steps:
     - name: Checkout
