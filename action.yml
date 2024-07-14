@@ -111,9 +111,6 @@ runs:
     #using: node20
     #main: build/distributions/index.js
 
-defaults:
-    run:
-
 steps:
     - uses: ./
         with:
