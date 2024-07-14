@@ -113,7 +113,6 @@ runs:
 
 defaults:
     run:
-        shell: wsl-bash {0}
 
 steps:
     - uses: ./
@@ -123,3 +122,12 @@ steps:
           npm ci
           npm run build
           npm run package
+      shell: wsl-bash {0}
+      if: runner.os == 'Windows'
+
+    - run: |
+          npm ci
+          npm run build
+          npm run package
+      shell: bash
+      if: runner.os != 'Windows'
