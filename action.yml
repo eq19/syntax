@@ -113,22 +113,22 @@ runs:
   using: composite
   steps:
     - uses: ./
-        with:
-          wsl-conf: |
-            [automount]
-            root = /
+      with:
+        wsl-conf: |
+          [automount]
+          root = /
       if: runner.os == 'Windows'
       
     - run: |
-          npm ci
-          npm run build
-          npm run package
+        npm ci
+        npm run build
+        npm run package
       shell: wsl-bash {0}
       if: runner.os == 'Windows'
 
     - run: |
-          npm ci
-          npm run build
-          npm run package
+        npm ci
+        npm run build
+        npm run package
       shell: bash
       if: runner.os != 'Windows'
