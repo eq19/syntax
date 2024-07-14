@@ -123,12 +123,6 @@ runs:
           #root = /
       if: runner.os == 'Windows'
       
-    - shell: wsl-bash {0}
-      run: id
-
-    - shell: wsl-bash -u root {0}
-      run: id
-  
     - run: |
         npm ci
         npm run build
