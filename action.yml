@@ -119,6 +119,10 @@ runs:
           #root = /
       if: runner.os == 'Windows'
       
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
     - run: |
         npm ci
         npm run build
