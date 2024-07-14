@@ -116,6 +116,10 @@ defaults:
 
 steps:
     - uses: ./
+        with:
+          wsl-conf: |
+            [automount]
+            root = /
       if: runner.os == 'Windows'
       
     - run: |
