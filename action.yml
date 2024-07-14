@@ -112,6 +112,10 @@ runs:
   #main: build/distributions/index.js
   using: composite
   steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
     - uses: Vampire/setup-wsl@v3
       #with:
         #wsl-conf: |
@@ -119,10 +123,6 @@ runs:
           #root = /
       if: runner.os == 'Windows'
       
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 20
-
     - run: |
         npm ci
         npm run build
