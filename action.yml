@@ -112,7 +112,7 @@ runs:
   #main: build/distributions/index.js
   using: composite
   steps:
-    - uses: ./
+    - uses: Vampire/setup-wsl@v3
       with:
         wsl-conf: |
           [automount]
