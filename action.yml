@@ -113,10 +113,10 @@ runs:
   using: composite
   steps:
     - uses: Vampire/setup-wsl@v3
-      with:
-        wsl-conf: |
-          [automount]
-          root = /
+      #with:
+        #wsl-conf: |
+          #[automount]
+          #root = /
       if: runner.os == 'Windows'
       
     - run: |
