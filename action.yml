@@ -112,27 +112,19 @@ runs:
   #main: build/distributions/index.js
   using: composite
   steps:
-    #- uses: actions/setup-node@v4
-      #with:
-        #node-version: 20
-
-    - uses: Vampire/setup-wsl@v3
-      #with:
-        #wsl-conf: |
-          #[automount]
-          #root = /
-      if: runner.os == 'Windows'
-      
-    - run: |
-        npm ci
-        npm run build
-        npm run package
-      shell: wsl-bash {0}
-      if: runner.os == 'Windows'
-
-    - run: |
-        npm ci
-        npm run build
-        npm run package
-      shell: bash
-      if: runner.os != 'Windows'
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@microsoft'
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+    - name: Type-Check
+      run: yarn type-check
+    - name: Package
+      run: yarn package
+    - name: Run Tests
+      run: yarn test-matrix --forbid-only ${{ matrix.mocha-args-windows }}
