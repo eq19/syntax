@@ -130,4 +130,5 @@ runs:
       shell: bash
       run: yarn package
     - name: Run Tests
+      shell: bash
       run: yarn test-matrix --forbid-only ${{ matrix.mocha-args-windows }}
