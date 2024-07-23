@@ -1,4 +1,4 @@
-# Semantic Kernel
+# [Semantic Kernel](https://github.com/microsoft/semantic-kernel)
 
 ## Status
 
