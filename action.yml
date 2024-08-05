@@ -112,14 +112,6 @@ runs:
   #main: build/distributions/index.js
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18.x'
-        registry-url: 'https://npm.pkg.github.com'
-        scope: '@microsoft'
     - name: Install Dependencies
       shell: bash
       run: yarn install --frozen-lockfile
