@@ -108,19 +108,9 @@ outputs:
             wsl-shell-command is not set explicitly and the script already exists, this output will be set.
 
 runs:
-  #using: node20
-  #main: build/distributions/index.js
   using: composite
   steps:
-    - name: Install Dependencies
-      shell: bash
-      run: yarn install --frozen-lockfile
-    - name: Type-Check
-      shell: bash
-      run: yarn type-check
-    - name: Package
-      shell: bash
-      run: yarn package
-    - name: Run Tests
-      shell: bash
-      run: yarn test-matrix --forbid-only ${{ matrix.mocha-args-windows }}
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
