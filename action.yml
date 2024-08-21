@@ -17,10 +17,18 @@ description: WSL Setup GitHub Action
 author: Björn Kautler
 
 branding:
-    icon: terminal
-    color: purple
+  icon: terminal
+  color: purple
 
 inputs:
+
+  token:
+    description: 'The deploy token'
+    required: false
+  credentials:
+    description: 'The gcloud credentials'
+    required: true
+
     distribution:
         description: |
             The WSL distribution to install, update, or configure.
