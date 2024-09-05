@@ -1,4 +1,4 @@
-# Copyright 2020-2022 Björn Kautler
+l# Copyright 2020-2022 Björn Kautler
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,6 +27,9 @@ inputs:
     required: false
   credentials:
     description: 'The gcloud credentials'
+    required: true
+  gell_mann:
+    description: 'The pre-build configuration'
     required: true
 
     distribution:
