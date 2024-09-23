@@ -1,0 +1,51 @@
+id: 6
+user: eq19
+span: span13
+title: eQuantum
+baseurl: /syntax
+repository: eq19/syntax
+action: eq19/parser/actions/runs/10990011090
+description: An attempt to discover the Final Theory
+
+#debug:
+#  dist: false
+#  compress: true
+#  shortcodes: true
+
+lsi: false
+incremental: true
+highlighter: rouge
+
+gist:
+  noscript: false
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+readme_index:
+  with_frontmatter: true
+
+exclude:
+  - LICENSE
+  - action.yml  
+  - Dockerfile
+
+plugins:
+  - jemoji
+  - jekyll-gist
+  - jekyll-avatar
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-coffeescript
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-relative-links
+  - jekyll-github-metadata
+  - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+
+track:
+  spin: [0, 5]
+  pinned: [maps, feed, lexer, parser, syntax, grammar]
+  organization: [Chetabahana, FeedMapping, GlobalZones, HybridModels, JunctionTerms, KernelPatterns, MappingSystem, NeuralSystem, ObjectModules, VirtualNetworks, WeakNegative, WeakPositive, ZeroWeak]
