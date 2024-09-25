@@ -41,7 +41,8 @@ runs:
   using: composite
   
   steps:
-    - name: 🌀 GAE Deployment 
+    # See https://cloud.google.com/functions
+    - name: 🌀 Cloud Function Deployment 
       if: runner.os == 'Windows'
       uses: 'google-github-actions/deploy-cloud-functions@v3'
       id: 'deploy'
