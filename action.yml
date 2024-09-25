@@ -43,7 +43,7 @@ runs:
   steps:
     # See https://cloud.google.com/functions
     - name: 🌀 Cloud Function Deployment 
-      if: runner.os == 'Windows'
+      if: runner.os != 'Windows'
       uses: 'google-github-actions/deploy-cloud-functions@v3'
       id: 'deploy'
       with:
@@ -52,6 +52,15 @@ runs:
 
     # See https://github.com/google-github-actions/deploy-cloud-functions
     - name: Example of using the output 
-      if: runner.os == 'Windows'
+      if: runner.os != 'Windows'
       shell: bash
       run: 'curl "${{ steps.deploy.outputs.url }}"'
+
+    - name: Collect output
+      if: runner.os == 'Windows'
+      uses: mathiasvr/command-output@v2.0.0
+      id: command
+      with:
+        run: |
+          date +'%Y-%m-%d'
+
