@@ -41,7 +41,15 @@ runs:
   using: composite
   
   steps:
-  - name: Setup .NET SDK
-    uses: actions/setup-dotnet@v4
-    with:
-      dotnet-version: 8.0.x
+    - name: 🌀 GAE Deployment 
+      if: runner.os == 'Windows'
+      uses: 'google-github-actions/deploy-cloud-functions@v3'
+      id: 'deploy'
+      with:
+        name: 'my-function'
+        runtime: 'nodejs20'
+
+    - name: Example of using the output 
+      if: runner.os == 'Windows'
+      shell: bash
+      run: 'curl "${{ steps.deploy.outputs.url }}"'
