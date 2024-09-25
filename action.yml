@@ -49,6 +49,7 @@ runs:
       with:
         name: 'my-function'
         runtime: 'nodejs20'
+        project_id: feedmapping
 
     # See https://github.com/google-github-actions/deploy-cloud-functions
     - name: Example of using the output 
