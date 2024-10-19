@@ -298,29 +298,19 @@ This would even close to the similar ability of human brain without undertanding
 
 ![](https://user-images.githubusercontent.com/8466209/200472044-dab44257-7c9a-4a91-82bb-c90cb7143e91.png)
 
-# Prime Identity
-
-We are going to assign prime identity as a ***standard model*** that attempts to stimulate a quantum field model called ***[eQuantum](https://github.com/eq19)*** for _[the four (4) known fundamental forces](https://en.wikipedia.org/wiki/Fundamental_interaction)_.
-
-This presentation was inspired by [theoretical works](https://github.com/eq19/maps/files/13468466/OU1938-Y1.1.pdf) from _[Hideki Yukawa](https://en.wikipedia.org/wiki/Hideki_Yukawa)_ who in 1935 had predicted the existence of _[mesons as the carrier particles](https://en.wikipedia.org/wiki/Meson)_ of strong nuclear force.
-
-## Addition Zones
-
-Here we would like to explain the way of said prime identity on getting the [arithmetic expression](https://youtu.be/S9oPqBeSsZA) of an ***individual unit identity*** such as a taxicab number below.
-
-```note
-It is a taxicab number, and is variously known as Ramanujan's number and the Ramanujan-Hardy number, after an anecdote of the British mathematician _[GH Hardy](https://en.wikipedia.org/wiki/G._H._Hardy)_ when he visited Indian mathematician _[Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan)_ in hospital _([Wikipedia](https://en.wikipedia.org/wiki/1729_(number)))_.
-```
-
-[![Ramanujan-Hardy number](https://user-images.githubusercontent.com/36441664/103107461-173c2b00-4671-11eb-962c-da7e9eab022e.png)](https://en.wikipedia.org/wiki/1729_(number))
-
-These three (3) number are [twin primes](https://en.wikipedia.org/wiki/Twin_prime). We called the pairs as _[True Prime Pairs](https://www.eq19.com/addition/file02.html#true-prime-pairs)_. Our scenario is mapping the distribution out of these pairs by taking the symmetrical behaviour of 36 as the smallest power (greater than 1) which is not a prime power.
+## The Prime Recycling ζ(s)
 
 ```tip
-The smallest square number expressible as the sum of **four (4) consecutive primes** in two ways (5 + 7 + 11 + 13 and 17 + 19) which are also **two (2) couples** of prime twins! _([Prime Curios!](https://en.wikipedia.org/wiki/1729_(number)](https://primes.utm.edu/curios/page.php?number_id=270)))_.
+{{ site.github.latest_release.body }}
 ```
 
-```scss
+## The Position Pairs
+
+[![Pauli_matrices](https://github.com/eq19/maps/assets/8466209/a5d16633-09b6-48e2-ad9f-cd55e4a8a181)](https://en.wikipedia.org/wiki/Pauli_matrices)
+
+***36 + 36 - 6 partitions = 72 - 6 = 66 = 30+36 = 6x11***
+
+```
 $True Prime Pairs:
  (5,7), (11,13), (17,19)
  
@@ -340,139 +330,290 @@ $True Prime Pairs:
  -----+-----+---------
 ```
 
-Thus in short this is all about a method that we called as the ***[19 vs 18 Scenario](https://www.eq19.com/grammar/identition/#the-77-principles)*** of mapping [the quantum way](https://www.google.com/search?q=eQuantum) within a huge of [primes objects](https://github.com/eq19) (5 to 19) by [lexering](https://en.wikipedia.org/wiki/Lexer_generator) (11) the un[grammar](https://en.wikipedia.org/wiki/Grammar)ed feed (7) and [parsering](https://en.wikipedia.org/wiki/Comparison_of_parser_generators) (13) across [syntax](https://en.wikipedia.org/wiki/Syntax) (17). 
+[![spinnors in physics](https://github.com/eq19/maps/assets/8466209/231e8377-6d0b-43ec-b0c1-432c2daf24bb)](https://youtu.be/j5soqexrwqY?t=7m32s)
 
-***Φ(1,2,3) = Φ(6,12,18) = Φ(13,37,61)***
+```py
+#!/usr/bin/env python
 
-```scss
+import numpy as np
+from scipy import linalg
+
+class SU3(np.matrix):
+	GELLMANN_MATRICES = np.array([
+		np.matrix([ #lambda_1
+			[0, 1, 0],
+			[1, 0, 0],
+			[0, 0, 0],
+		], dtype=np.complex),
+		np.matrix([ #lambda_2
+			[0,-1j,0],
+			[1j,0, 0],
+			[0, 0, 0],
+		], dtype=np.complex),
+		np.matrix([ #lambda_3
+			[1, 0, 0],
+			[0,-1, 0],
+			[0, 0, 0],
+		], dtype=np.complex),
+		np.matrix([ #lambda_4
+			[0, 0, 1],
+			[0, 0, 0],
+			[1, 0, 0],
+		], dtype=np.complex),
+		np.matrix([ #lambda_5
+			[0, 0,-1j],
+			[0, 0, 0 ],
+			[1j,0, 0 ],
+		], dtype=np.complex),
+		np.matrix([ #lambda_6
+			[0, 0, 0],
+			[0, 0, 1],
+			[0, 1, 0],
+		], dtype=np.complex),
+		np.matrix([ #lambda_7
+			[0, 0,  0 ],
+			[0, 0, -1j],
+			[0, 1j, 0 ],
+		], dtype=np.complex),
+		np.matrix([ #lambda_8
+			[1, 0, 0],
+			[0, 1, 0],
+			[0, 0,-2],
+		], dtype=np.complex) / np.sqrt(3),
+	])
+
+
+	def computeLocalAction(self):
+		pass
+
+	@classmethod
+	def getMeasure(self):
+		pass
+```
+
+![](https://user-images.githubusercontent.com/36441664/84902333-e6ce6f80-b0d6-11ea-8289-aac5e1961cd6.gif)
+
+Now the following results: Due to the convolution and starting from the desired value of the prime position pairs, the product templates and prime numbers templates of _the prime number 7 lie in the numerical Double strand parallel opposite_.
+
+## The Fourth Root
+
+In number theory, the [partition functionp(n)](https://gist.github.com/eq19/e9832026b5b78f694e4ad22c3eb6c3ef#partition-function) represents the number of possible partitions of a non-negative integer n.
+
+![image](https://github.com/eq19/maps/assets/8466209/47eb16ae-0e78-4ec8-8351-e76d59511aa0)
+
+Integers can be considered either in themselves or as solutions to equations ([Diophantine geometry](https://en.wikipedia.org/wiki/Diophantine_geometry)).
+
+```note
+[Young diagrams](https://commons.wikimedia.org/wiki/Category:Young_diagrams) associated to the partitions of the positive integers 1 through 8. They are arranged so that images under the reflection about the main diagonal of the square are conjugate partitions _([Wikipedia](https://en.wikipedia.org/wiki/Partition_(number_theory)))_.
+```
+
+[![integer partition](https://github.com/eq19/maps/assets/8466209/1a979f09-4592-4139-92fd-73472a54c60c)](https://commons.wikimedia.org/wiki/Category:Young_diagrams)
+
+```note
+By parsering [π(1000)=168 primes](https://www.eq19.com/sitemap.xml) of the 1000 id's across **π(π(10000))-1=200** of this syntax then the (Δ1) would be _[initiated](https://eq19.github.io/init.js)_. Based on Assigning Sitemap [priority values](https://www.microsystools.com/products/sitemap-generator/help/xml-sitemaps-creator-importance/) You may see them are set 0.75 – 1.0 on the [sitemap's index](https://www.eq19.com/sitemap.xml):
+```
+
+```
+Priority	Page Name
+1	        Homepage
+0.9	        Main landing pages
+0.85	        Other landing pages
+0.8	        Main links on navigation bar
+0.75	        Other pages on site
+0.8	        Top articles/blog posts
+0.75	        Blog tag/category pages
+0.4 – 0.7	Articles, blog posts, FAQs, etc.
+0.0 – 0.3	Outdated information or old news that has become less relevant
+```
+
+By this object orientation then the _[reinjected primes](https://github.com/actions/cache#cache-version)_ from the π(π(10000))-1=200 will be **(168-114)+(160-114)=54+46=100**. Here are our layout that is provided using _[Jekyll/Liquid](https://jekyllrb.com/docs/liquid/)_ to facilitate the cycle:
+
+***100 + 68 + 32 = 200***
+
+```
 $True Prime Pairs:
 (5,7), (11,13), (17,19)
  
-layer | node | sub |  i  |  f
-------+------+-----+----------
-      |      |     |  1  | 
-      |      |  1  +-----+          
-      |  1   |     |  2  | (5)
-      |      |-----+-----+
-      |      |     |  3  |
-  1   +------+  2  +-----+----
-      |      |     |  4  |
-      |      +-----+-----+
-      |  2   |     |  5  | (7)
-      |      |  3  +-----+
-      |      |     |  6  |
-------+------+-----+-----+------      } (36)
-      |      |     |  7  |
-      |      |  4  +-----+
-      |  3   |     |  8  | (11)
-      |      +-----+-----+
-      |      |     |  9  |
-  2   +------|  5  +-----+-----
-      |      |     |  10 |
-      |      |-----+-----+
-      |  4   |     |  11 | (13)
-      |      |  6  +-----+
-      |      |     |  12 |
-------+------+-----+-----+------------------
-      |      |     |  13 |
-      |      |  7  +-----+
-      |  5   |     |  14 | (17)
-      |      |-----+-----+
-      |      |     |  15 |
-  3   +------+  8  +-----+-----       } (36)
-      |      |     |  16 |
-      |      |-----+-----+
-      |  6   |     |  17 | (19)
-      |      |  9  +-----+
-      |      |     |  18 |
-------|------|-----+-----+------
+layer | node | sub |  i  |  f.                                      MEC 30 / 2
+------+------+-----+-----+------      ‹--------------------------- 30 {+1/2} √
+      |      |     |  1  | --------------------------
+      |      |  1  +-----+                           |    
+      |  1   |     |  2  | (5)                       |
+      |      |-----+-----+                           |
+      |      |     |  3  |                           |
+  1   +------+  2  +-----+----                       |
+      |      |     |  4  |                           |
+      |      +-----+-----+                           |
+      |  2   |     |  5  | (7)                       |
+      |      |  3  +-----+                           |
+      |      |     |  6  |                          11s
+------+------+-----+-----+------      } (36)         |
+      |      |     |  7  |                           |
+      |      |  4  +-----+                           |
+      |  3   |     |  8  | (11)                      |
+      |      +-----+-----+                           |
+      |      |     |  9  |‹--                        |
+  2   +------|  5* +-----+-----                      |
+      |      |     |  10 |                           |
+      |      |-----+-----+                           |
+      |  4   |     |  11 | (13) --------------------- 32 √
+      |      |  6  +-----+            ‹------------------------------ 15 {0} √
+      |      |     |  12 |---------------------------
+------+------+-----+-----+------------               |
+      |      |     |  13 |                           |
+      |      |  7  +-----+                           |
+      |  5   |     |  14 | (17)                      |
+      |      |-----+-----+                           |
+      |      |     |  15 |                           7s = f(1000)
+  3*  +------+  8  +-----+-----       } (36)         |
+      |      |     |  16 |                           |
+      |      |-----+-----+                           |
+      |  6   |     |  17 | (19)                      |
+      |      |  9  +-----+                           |
+      |      |     |  18 | -------------------------- 68 √
+------|------|-----+-----+-----                            ‹------  0 {-1/2} √
 ```
 
-The main background is that, as you may aware, the prime number theorem describes the [asymptotic distribution](https://youtu.be/j5s0h42GfvM) of prime numbers which is still a major problem in mathematic. 
+[![Diagram-of-the-statistical-principle-for-the-constitution-of-partitions-of-prime-numbers](https://github.com/eq19/maps/assets/8466209/e0e8d25c-01a4-4c87-9f3a-6f3fcfab3679)](https://github.com/eq19/maps/files/13722898/Partitions_of_even_numbers.pdf)
 
-## Multiplication Zones
-
-Instead of a proved formula we came to a unique expression called ***zeta function***. This expression first appeared in a paper in 1737 entitled _Variae observationes circa series infinitas_. 
-
-```tip
-This expression states that the sum of the zeta function is equal to the product of the reciprocal of one minus the reciprocal of primes to the powers. But what has this got to do with the primes?  The answer is in the following product taken over the primes p (discovered by _[Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler)_):
+```txt
+p r i m e s
+1 0 0 0 0 0
+2 1 0 0 0 1 ◄--- #29 ◄--- #61 👈 1st spin
+3 2 0 1 0 2 👉 2
+4 3 1 1 0 3 👉 89 - 29 = 61 - 1 = 60
+5 5 2 1 0 5 👉 11 + 29 = 37 + 3 = 40 
+          6 👉 11s Composite Partition ◄--- 102 👈 4th spin
+6 7 3 1 0 7 ◄--- #23 👈 7+23 = 30 ✔️
+7 11 4 1 0 11 ◄--- #19 👈 11+19 = 30 ✔️
+8 13 5 1 0 13 ◄--- #17 ◄--- #49 👈 13+17 = 30 ✔️
+9 17 0 1 1 17 ◄--- 7th prime👈 17+7 != 30❓
+           18 👉 7s Composite Partition ◄--- 168 👈 7th spin
+10 19 1 1 1 ∆1 ◄--- 0th ∆prime ◄--- Fibonacci Index #18
+-----
+11 23 2 1 1 ∆2 ◄--- 1st ∆prime ◄--- Fibonacci Index #19 ◄--- #43
+..
+..
+40 163 5 1 0 ∆31 ◄- 11th ∆prime ◄-- Fibonacci Index #29 👉 11
+-----
+41 167 0 1 1 ∆0
+42 173 0 -1 1 ∆1
+43 179 0 1 1 ∆2 ◄--- ∆∆1
+44 181 1 1 1 ∆3 ◄--- ∆∆2 ◄--- 1st ∆∆prime ◄--- Fibonacci Index #30
+..
+..
+100 521 0 -1 2 ∆59 ◄--- ∆∆17 ◄--- 7th ∆∆prime ◄--- Fibonacci Index #36  👉 7s
+-----
 ```
 
-![zeta function](https://user-images.githubusercontent.com/8466209/219739322-ebdc1916-249a-49da-8ded-ce0fe1205550.png)
+## Composite System
 
-Meanwhile obtaining the non complex numbers it is easier to look at a graph like the one below which shows Li(x) (blue), R(x) (black), π(x) (red) and x/ln x (green); and then proclaim "R(x) is the best estimate of π(x)." Indeed it is for that range, but as we mentioned above, Li(x)-π(x) changes sign infinitely often, and near where it does, Li(x) would be the best value.
+By taking a distinc function between f(π) as P vs f(i) as NP where e<sup>iπ</sup> + 1 = 0 then theoretically they shall be correlated to get an expression of the prime platform similar to the _Mathematical Elementary Cell 30 ([MEC30](https://gist.github.com/eq19/0ce5848f7ad62dc46dedfaa430069857#true-prime-pairs))_.
 
-[![non complex numbers](https://user-images.githubusercontent.com/8466209/219214486-e6412fb0-d190-45ae-990f-524532661444.png)](https://primes.utm.edu/howmany.html#better)
+![](https://user-images.githubusercontent.com/36441664/74591945-2b75cb80-504f-11ea-85dd-14d0a803ee6b.png)
 
-And we can see in the same way that the function Li(x)-(1/2)Li(x1/2) is 'on the average' a better approximation than Li(x) to π(x); but no importance can be attached to the latter terms in Riemann's formula even by repeated averaging.
+***∆17 + ∆49 = ∆66***
 
-## Exponentiation Zones
-
-The problem is that the contributions from the non-trivial zeros at times swamps that of any but the main terms in these expansions.
-
-```warning
-A. E. Ingham says it this way: Considerable importance was attached formerly to a function suggested by Riemann as an approximation to π(x)... This function represents π(x) with astonishing accuracy for all values of x for which π(x) has been calculated, but we now see that its superiority over Li(x) ***is illusory***... and for special values of x (as large as we please) the one approximation will deviate as widely as the other from the true value _([primes.utm.edu](https://primes.utm.edu/howmany.html#better))_.
+```txt
+p r i m e s
+1 0 0 0 0 0
+2 1 0 0 0 1 ◄--- #29 ◄--- #61 👈 1st spin
+3 2 0 1 0 2 👉 2
+4 3 1 1 0 3 👉 89 - 29 = 61 - 1 = 60
+5 5 2 1 0 5 👉 11 + 29 = 37 + 3 = 40 
+          6 👉 11s Composite Partition ◄--- 102 👈 4th spin
+6 7 3 1 0 7 ◄--- #23 👈 part of MEC30 ✔️
+7 11 4 1 0 11 ◄--- #19 👈 part of MEC30 ✔️
+8 13 5 1 0 13 ◄--- #17 ◄--- #49 👈 part of MEC30 ✔️
+9 17 0 1 1 17 ◄--- 7th prime👈 not part of MEC30 ❓
+           18 👉 7s Composite Partition ◄--- 168 👈 7th spin
+10 19 1 1 1 ∆1 ◄--- 0th ∆prime ◄--- Fibonacci Index #18
+-----
+11 23 2 1 1 ∆2 ◄--- 1st ∆prime ◄--- Fibonacci Index #19 ◄--- #43
+..
+..
+40 163 5 1 0 ∆31 ◄- 11th ∆prime ◄-- Fibonacci Index #29 👉 11
+-----
+41 167 0 1 1 ∆0
+42 173 0 -1 1 ∆1
+43 179 0 1 1 ∆2 ◄--- ∆∆1
+44 181 1 1 1 ∆3 ◄--- ∆∆2 ◄--- 1st ∆∆prime ◄--- Fibonacci Index #30
+..
+..
+100 521 0 -1 2 ∆59 ◄--- ∆∆17 ◄--- 7th ∆∆prime ◄--- Fibonacci Index #36  👉 7s
+-----
 ```
 
-[![howmany primes](https://user-images.githubusercontent.com/36441664/87958552-dea18f80-cadb-11ea-9499-6c2ee580a5ca.png)](https://primes.utm.edu/howmany.html#pnt)
+![a-Example-of-trellis-tone-modulation-generated-by-referring-to-the-trellis-diagram-in](https://github.com/eq19/maps/assets/8466209/12f9a1d4-07c5-40ad-a5e8-e98933b4956d)
 
-Schematic representation of fermions and bosons in SU(5) GUT showing 5 + 10 split in the multiplets. Neutral bosons (photon, Z-boson, and neutral gluons) are not shown but occupy the diagonal entries of the matrix in complex superpositions.
+***∆102 - ∆2 - ∆60 = ∆40***
 
-[![SO(10)](https://github.com/eq19/maps/assets/8466209/b1d3bccd-a423-4ebb-a397-e973b2cc8e6e)
-](https://en.wikipedia.org/wiki/Grand_Unified_Theory)
-
-[![SU(5)_representation_of_fermions](https://github.com/eq19/maps/assets/8466209/2b1aa8f5-0028-4549-a091-eee291ed4890)
-](https://en.wikipedia.org/wiki/Grand_Unified_Theory)
-
-This interpretation is consistent with _[interpreting the strings](https://www.google.com/search?q=8+first-generation+fermion+particles%3B+8+first-generation+fermion+anti-particles)_ as World Lines of the Worlds of Many-Worlds Quantum Theory.
+```txt
+p r i m e s
+1 0 0 0 0 0
+2 1 0 0 0 1 ◄--- #29 ◄--- #61 👈 1st spin
+3 2 0 1 0 2 👉 2
+4 3 1 1 0 3 👉 89 - 29 = 61 - 1 = 60
+5 5 2 1 0 5 👉 11 + 29 = 37 + 3 = 40 
+          6 👉 11s Composite Partition ◄--- 102 👈 4th spin
+6 7 3 1 0 7 ◄--- #23 👈 30 ◄--- break MEC30 symmetry ✔️
+7 11 4 1 0 11 ◄--- #19 👈 30 ✔️
+8 13 5 1 0 13 ◄--- #17 ◄--- #49 👈 30 ✔️
+9 17 0 1 1 17 ◄--- 7th prime👈 not part of MEC30 ❓
+           18 👉 7s Composite Partition ◄--- 168 👈 7th spin
+10 19 1 1 1 ∆1 ◄--- 0th ∆prime ◄--- Fibonacci Index #18
+-----
+11 23 2 1 1 ∆2 ◄--- 1st ∆prime ◄--- Fibonacci Index #19 ◄--- #43
+..
+..
+40 163 5 1 0 ∆31 ◄- 11th ∆prime ◄-- Fibonacci Index #29 👉 11
+-----
+41 167 0 1 1 ∆0
+42 173 0 -1 1 ∆1
+43 179 0 1 1 ∆2 ◄--- ∆∆1
+44 181 1 1 1 ∆3 ◄--- ∆∆2 ◄--- 1st ∆∆prime ◄--- Fibonacci Index #30
+..
+..
+100 521 0 -1 2 ∆59 ◄--- ∆∆17 ◄--- 7th ∆∆prime ◄--- Fibonacci Index #36  👉 7s
+-----
+```
 
 ```note
-The 26-dimensional traceless subalgebra J3(O)o is arepresentation of the 26-dim Theory of Unoriented Closed Bosonic Strings produces a Bohm Quantum Theory with geometry of E6 / F4. The E6 of the can be represented in terms of:
-- ***3 copies of the 26-dimensional*** traceless subalgebra J3(O)o of the 27-dimensional J3(O) by using the of ***78-dimensional E6 over 52-dimensional F4*** and the structure of based on the 26-dimensional representation of.
-- In this view, Lie algebra D4-D5-E6-E7-E8 VoDou Physics model Jordan algebra fibration E6/F4 F4 as doubled J3(O)o F4 
-
-In order to reproduce the known spectrum of weakly coupled bosonic string theory, bosonic M theory will have to contain an additional field besides the ***27 dimensional gravitational field***, namely a three-form potential CFT. _([PhiloPhysics - pdf](https://github.com/eq19/maps/files/14258292/PhiloPhysics.pdf))_
+***The partitions of odd composite numbers (Cw) are as important as the partitions of prime numbers or Goldbach partitions (Gw)***. The number of partitions Cw is fundamental for defining the available lines (Lwd) in a Partitioned Matrix that explain the existence of partitions Gw or Goldbach partitions. _([Partitions of even numbers - pdf](https://github.com/eq19/maps/files/13722898/Partitions_of_even_numbers.pdf))_
 ```
 
-***6+6 + 6/\6 = 6+6 + 15 = 27-day month***
+[![Trellis_Tone_Modulation_Multiple-Access_for_Peer_D](https://github.com/eq19/maps/assets/8466209/58a42b62-7c61-404f-a3a0-e4850dd17875)](https://github.com/eq19/maps/files/13734648/Trellis_Tone_Modulation_Multiple-Access_for_Peer_D.pdf)
 
-[![26 Dimensions of Bosonic String Theory](https://github.com/eq19/maps/assets/8466209/edb2a71a-9c95-4b61-9cd0-332e548220b4)](https://www.valdostamuseum.com/hamsmith/Rzeta.html)
+***30s + 36s (addition) = 6 x 11s (multiplication) = 66s***
 
-The areas of research, which involve about [30 research groups](https://en.wikipedia.org/wiki/Loop_quantum_gravity#cite_note-FOOTNOTERovelli2008-1) worldwide, share the basic physical assumptions and the mathematical description of quantum space.
-
-## Identition Zones
-
-This issue is actually come from ***[Riemann hypothesis](https://youtu.be/zlm1aajH6gY)***, a conjecture about the distribution of complex zeros of the Riemann zeta function that is considered to be ***the most important*** of _[unsolved problems](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics)_ in pure mathematics.
-
-```note
-In addition to the trivial roots, there also exist ***complex roots*** for real t. We find that the he first ten (10) non-trivial roots of the Riemann zeta function is occured when the values of t below 50. A plot of the values of ζ(1/2 + it) for t ranging from –50 to +50 is shown below. The roots occur each time ***the locus passes through the origin***. _([mathpages](https://www.mathpages.com/home/kmath738/kmath738.htm))_.
+```txt
+p r i m e s
+1 0 0 0 0 0
+2 1 0 0 0 1 ◄--- #29 ◄--- #61 👈 1st spin
+3 2 0 1 0 2 👉 2
+4 3 1 1 0 3 👉 89 - 29 = 61 - 1 = 60
+5 5 2 1 0 5 👉 11 + 29 = 37 + 3 = 40 
+          6 👉 11s Composite Partition ◄--- 102 👈 4th spin
+6 7 3 1 0 7 ◄--- #23 👈 f(#30) ◄--- break MEC30 symmetry
+7 11 4 1 0 11 ◄--- #19 👈 30
+8 13 5 1 0 13 ◄--- #17 ◄--- #49 👈 30
+9 17 0 1 1 17 ◄--- 7th prime 👈 f(#36) ◄--- antisymmetric state ✔️
+           18 👉 7s Composite Partition ◄--- 168 👈 7th spin
+10 19 1 1 1 ∆1 ◄--- 0th ∆prime ◄--- Fibonacci Index #18
+-----
+11 23 2 1 1 ∆2 ◄--- 1st ∆prime ◄--- Fibonacci Index #19 ◄--- #43
+..
+..
+40 163 5 1 0 ∆31 ◄- 11th ∆prime ◄-- Fibonacci Index #29 👉 11
+-----
+41 167 0 1 1 ∆0
+42 173 0 -1 1 ∆1
+43 179 0 1 1 ∆2 ◄--- ∆∆1
+44 181 1 1 1 ∆3 ◄--- ∆∆2 ◄--- 1st ∆∆prime ◄--- Fibonacci Index #30
+..
+..
+100 521 0 -1 2 ∆59 ◄--- ∆∆17 ◄--- 7th ∆∆prime ◄--- Fibonacci Index #36  👉 7s
+-----
 ```
 
-[![trivial roots](https://user-images.githubusercontent.com/8466209/219828222-615a2037-dbcd-4412-95bf-740bb32094de.png)](https://www.mathpages.com/home/kmath738/kmath738.htm)
-
-The path plan assume that a symmetric distribution of prime numbers with equal axial lengths from a ***middle zero axis = 15*** is able to determine the distribution of primes in a given number space. This assumption finally bring us to the equation of ***[Euler's identity](https://en.wikipedia.org/wiki/Euler%27s_identity)***. 
-
-```note
-Euler's identity is considered to be an exemplar of deep mathematical beauty as it shows a profound connection between the most fundamental numbers. Three (3) of the basic arithmetic operations occur exactly once each: ***addition***, ***multiplication***, and ***exponentiation*** _([Wikipedia](https://en.wikipedia.org/wiki/Euler%27s_identity))_.
-```
-
-[![Parallel Universes](https://github.com/eq19/maps/assets/8466209/b0940e73-2b08-4cf5-83fc-fc3a49248ddc)](https://www.eq19.com/identition/#parallel-universes)
-
-Using these algorithms, the _[inflation structure](https://www.mdpi.com/2073-8994/15/9/1701)_ of radial null geodesics spacetime for propagating light cone in primordial universe could be tabulated as below.
-
-```tip
-{{ site.github.latest_release.body }}
-```
-
-![fully-expanded-incl-matrices](https://github.com/eq19/maps/assets/8466209/97eb39af-a7ef-41a1-8e37-4dd1f577ff79)
-
-So we need to reformulate Einstein's general relativity in a language closer to that of the rest of fundamental physics, specifically [Yang–Mills theory](https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory).
-
-**[eQuantum Project](https://github.com/eq19)**   
-Copyright © 2023-2024
-
-Reference:
-* [Riemann Zeta](https://commons.wikimedia.org/wiki/File:RiemannZeta_Zeros.svg)
-* [Mersenne Prime](https://en.wikipedia.org/wiki/Mersenne_prime)
-* [The Prime Hexagon](https://youtu.be/fQL4KRH3wUQ)
-* [The Primes Demystified](https://www.primesdemystified.com/First1000Primes.html)
+![](https://user-images.githubusercontent.com/36441664/84674358-09387f80-af55-11ea-9fe2-954f020edb21.jpg)
