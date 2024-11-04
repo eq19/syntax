@@ -41,15 +41,15 @@ runs:
   using: composite
   
   steps:
+    - name: Setup .NET SDK
+      if: runner.os == '-macOS'
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
     - name: Build Jekyll pages
-      if: runner.os != 'macOS'
+      if: runner.os == 'macOS'
       id: jekyll_site
       shell: bash
       run: |
         /home/runner/scripts/jekyll_site.sh
-
-    - name: Setup .NET SDK
-      if: runner.os == 'macOS'
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
