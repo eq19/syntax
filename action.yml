@@ -52,4 +52,4 @@ runs:
       id: jekyll_site
       shell: bash
       run: |
-        /home/runner/scripts/jekyll_site.sh
+        ./.github/entrypoint/github-pages.sh
