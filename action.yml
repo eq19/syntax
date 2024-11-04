@@ -52,4 +52,4 @@ runs:
       id: jekyll_site
       shell: bash
       run: |
-        ${{ github.action_path }}/.github/entrypoint/github-pages.sh
+        ${{ github.action_path }}/.github/entrypoint/github_pages.sh
