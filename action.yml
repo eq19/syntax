@@ -36,6 +36,10 @@ inputs:
     description: The id according to os
     required: true
 
+outputs:
+  description: 'The command.outputs'
+  value: ${{ steps.*.outputs.* }}
+
 runs:
   #using: 'node20'
   #main: '.github/run/main.js'
