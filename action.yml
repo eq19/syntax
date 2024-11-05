@@ -32,6 +32,9 @@ inputs:
   gell_mann:
     description: 'The pre-build configuration'
     required: true
+  id:
+    description: The id according to os
+    required: true
 
 runs:
   #using: 'node20'
