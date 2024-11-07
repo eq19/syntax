@@ -54,9 +54,9 @@ runs:
       if: ${{ runner.os == '-Windows' && inputs.failure_status == 'false' }}
       with:
         cache-version: 1
-        rubygems: default
-        ruby-version: '3.3'
+        #rubygems: default
         bundler-cache: true
+        ruby-version: '3.3.4'
         working-directory: "${{ github.workspace }}"
         
     - name: Build Jekyll pages
