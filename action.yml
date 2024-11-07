@@ -64,7 +64,7 @@ runs:
       id: jekyll_site
       shell: bash
       run: |
-        echo -e "\n$hr\nBuild Pages\n$hr" && cd "${RUNNER_TEMP}/gh-source"
+        echo -e "\n$hr\nBuild Pages\n$hr" && cd "${{ github.workspace }}"
 
         #Jekyll Quick Reference https://gist.github.com/DrOctogon/bfb6e392aa5654c63d12
         JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true bundle exec jekyll build --profile -t -p "${{ github.workspace }}/_plugins" -d "${{ github.workspace }}/docs"   
