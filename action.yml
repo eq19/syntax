@@ -66,7 +66,7 @@ runs:
         working-directory: ${{ github.workspace }}
         
     - name: Build Jekyll pages
-      if: ${{ runner.os == 'Windows' && inputs.failure_status = 'false' }}
+      if: ${{ runner.os == 'Windows' && inputs.failure_status == 'false' }}
       id: jekyll_site
       shell: bash
       run: |
