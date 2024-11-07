@@ -49,13 +49,6 @@ runs:
   using: composite
   
   steps:
-    - name: Build Jekyll pages
-      if: ${{ runner.os == 'Windows' && inputs.failure_status == 'false' }}
-      id: jekyll_site
-      shell: bash
-      run: |
-        git clone --single-branch -b 'gh-source' ${TARGET_REPOSITORY} gh-source && cd gh-source
-        
     - name: 💎 Setup Ruby
       uses: ruby/setup-ruby@v1
       if: ${{ runner.os == 'Windows' && inputs.failure_status == 'false' }}
@@ -64,7 +57,7 @@ runs:
         rubygems: default
         ruby-version: '3.3'
         bundler-cache: true
-        working-directory: "${RUNNER_TEMP}/gh-source"
+        working-directory: "${{ github.workspace }}"
         
     - name: Build Jekyll pages
       if: ${{ runner.os == 'Windows' && inputs.failure_status == 'false' }}
@@ -74,9 +67,7 @@ runs:
         echo -e "\n$hr\nBuild Pages\n$hr" && cd "${RUNNER_TEMP}/gh-source"
 
         #Jekyll Quick Reference https://gist.github.com/DrOctogon/bfb6e392aa5654c63d12
-        JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true bundle exec jekyll build --profile -t -p "${RUNNER_TEMP}/gh-source/_plugins" -d "${RUNNER_TEMP}/gh-source/docs"   
+        JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true bundle exec jekyll build --profile -t -p "${{ github.workspace }}/_plugins" -d "${{ github.workspace }}/docs"   
 
-        if [[ "${TARGET_REPOSITORY}" == "eq19/eq19.github.io" ]]; then echo "www.eq19.com" > "${RUNNER_TEMP}/gh-source/docs/CNAME"; fi
-        
-        rm -rf "${{ github.workspace }}/*" && mv -f "${RUNNER_TEMP}/gh-source/*" "${{ github.workspace }}/"
+        if [[ "${TARGET_REPOSITORY}" == "eq19/eq19.github.io" ]]; then echo "www.eq19.com" > "${{ github.workspace }}/docs/CNAME"; fi
         rm -rf "${{ github.workspace }}/docs/.nojekyll" && touch "${{ github.workspace }}/docs/.nojekyll"
