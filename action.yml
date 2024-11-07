@@ -55,9 +55,20 @@ runs:
       with:
         dotnet-version: 8.0.x
 
+    - name: 💎 Setup Ruby
+      uses: ruby/setup-ruby@v1
+      if: runner.os == 'Windows'
+      with:
+        cache-version: 1
+        rubygems: default
+        ruby-version: '3.3'
+        bundler-cache: true
+        working-directory: ${{ github.workspace }}
+        
     - name: Build Jekyll pages
-      if: runner.os == '-Windows'
+      if: runner.os == 'Windows'
       id: jekyll_site
       shell: bash
       run: |
+        cd "${{ github.workspace }}"
         ${{ github.action_path }}/.github/entrypoint/github_pages.sh
