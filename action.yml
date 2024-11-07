@@ -57,7 +57,7 @@ runs:
 
     - name: 💎 Setup Ruby
       uses: ruby/setup-ruby@v1
-      if: runner.os == 'Windows'
+      if: ${{ runner.os == 'Windows' && inputs.failure_status == 'false' }}
       with:
         cache-version: 1
         rubygems: default
@@ -66,13 +66,13 @@ runs:
         working-directory: ${{ github.workspace }}
         
     - name: Build Jekyll pages
-      if: runner.os == 'Windows'
+      if: ${{ runner.os == 'Windows' && inputs.failure_status == 'false' }}
       id: jekyll_site
       shell: bash
       run: |
         echo -e "\n$hr\nBuild Pages\n$hr" && cd "${{ github.workspace }}"
         #Jekyll Quick Reference https://gist.github.com/DrOctogon/bfb6e392aa5654c63d12
-        JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true jekyll build --profile -t -p "${{ github.workspace }}/_plugins" -d "${{ github.workspace }}/docs"   
+        JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true bunfle exec jekyll build --profile -t -p "${{ github.workspace }}/_plugins" -d "${{ github.workspace }}/docs"   
 
         if [[ "${TARGET_REPOSITORY}" == "eq19/eq19.github.io" ]]; then echo "www.eq19.com" > /home/runner/_site/docs/CNAME; fi
         rm -rf "${{ github.workspace }}/docs/.nojekyll" && touch "${{ github.workspace }}/docs/.nojekyll"
