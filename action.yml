@@ -45,7 +45,7 @@ runs:
   #post-if: 'success()'
   using: composite
   
-steps:
+  steps:
     - name: Target Configuration
       if: inputs.id == 3
       uses: eq19/eq19/.github/actions/3-exponentiation/5-syntax@v1
