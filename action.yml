@@ -23,10 +23,6 @@ inputs:
   provider:
     description: 'The deploy provider'
     required: true
-  workspace:
-    description: 'The path of github workspace'
-    default: '${GITHUB_WORKSPACE//\\//}'
-    required: false
   credentials:
     description: 'The gcloud credentials'
     required: true
