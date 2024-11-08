@@ -51,16 +51,16 @@ runs:
   steps:
     - name: 💎 Setup Ruby
       uses: ruby/setup-ruby@v1
-      if: ${{ runner.os == '-Windows' && inputs.failure_status == 'false' }}
+      if: runner.os == 'Windows'
       with:
         #cache-version: 1
         #rubygems: default
         #bundler-cache: true
         ruby-version: '3.3.4'
-        working-directory: "${{ github.workspace }}"
+        working-directory: "${{ inputs.workspace }}"
         
     - name: Build Jekyll pages
-      if: ${{ runner.os == 'Windows' && inputs.failure_status == 'false' }}
+      if: runner.os == 'Windows'
       id: jekyll_site
       shell: bash
       run: |
@@ -68,7 +68,7 @@ runs:
         #choco install ruby -y && gem install jekyll bundler faraday-retry github-pages --platform=ruby
  
         #Jekyll Quick Reference https://gist.github.com/DrOctogon/bfb6e392aa5654c63d12
-        JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true bundle exec jekyll build --profile -t -p "${{ github.workspace }}\_plugins" -d "${{ github.workspace }}\docs"   
+        JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true bundle exec jekyll build --profile -t -p "${{ inputs.workspace }}/_plugins" -d "${{ inputs.workspace }}\docs"   
 
         if [[ "${TARGET_REPOSITORY}" == "eq19/eq19.github.io" ]]; then echo "www.eq19.com" > "${{ github.workspace }}/docs/CNAME"; fi
         rm -rf "${{ github.workspace }}/docs/.nojekyll" && touch "${{ github.workspace }}/docs/.nojekyll"
