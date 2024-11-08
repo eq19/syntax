@@ -61,7 +61,7 @@ steps:
         token: ${{ inputs.token }}
 
     - name: Profiling Feedback
-      if: inputs.id == 'Windows'
+      if: inputs.id == 4
       uses: eq19/eq19/.github/actions/4-identition/5-syntax@v1
       id: identition
       with:
