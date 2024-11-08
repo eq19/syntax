@@ -47,7 +47,7 @@ runs:
   
 steps:
     - name: Target Configuration
-      if: runner.os != 'Windows'
+      if: inputs.id == 3
       uses: eq19/eq19/.github/actions/3-exponentiation/5-syntax@v1
       id: exponentiation
       with:
@@ -61,7 +61,7 @@ steps:
         token: ${{ inputs.token }}
 
     - name: Profiling Feedback
-      if: runner.os == 'Windows'
+      if: inputs.id == 'Windows'
       uses: eq19/eq19/.github/actions/4-identition/5-syntax@v1
       id: identition
       with:
