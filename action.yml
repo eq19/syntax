@@ -49,27 +49,31 @@ runs:
   #post-if: 'success()'
   using: composite
   
-  steps:
-    - name: 💎 Setup Ruby
-      uses: ruby/setup-ruby@v1
-      if: runner.os == 'Windows'
+steps:
+    - name: Target Configuration
+      if: runner.os != 'Windows'
+      uses: eq19/eq19/.github/actions/3-exponentiation/5-syntax@v1
+      id: exponentiation
       with:
-        #cache-version: 1
-        #rubygems: default
-        #bundler-cache: true
-        ruby-version: '3.3.4'
-        working-directory: "${{ inputs.workspace }}"
-        
-    - name: Build Jekyll pages
-      if: runner.os == 'Windows'
-      id: jekyll_site
-      shell: bash
-      run: |
-        echo -e "\n$hr\nBuild Pages\n$hr" && cd "${{ inputs.workspace }}"
-        #choco install ruby -y && gem install jekyll bundler faraday-retry github-pages --platform=ruby
- 
-        #Jekyll Quick Reference https://gist.github.com/DrOctogon/bfb6e392aa5654c63d12
-        JEKYLL_GITHUB_TOKEN=${{ inputs.token }} DISABLE_WHITELIST=true bundle exec jekyll build --profile -t -p "${{ inputs.workspace }}/_plugins" -d "${{ inputs.workspace }}/ocs"   
+        hub_username: ${{ inputs.docker_hub_username }}
+        hub_password: ${{ inputs.docker_hub_password }}
+        failure_status: ${{ inputs.failure_status }}
+        hub_token: ${{ inputs.docker_hub_token }}
+        credentials: ${{ inputs.credentials }}
+        action_path: ${{ github.action_path }}
+        image_name: ${{ inputs.image_name }}
+        token: ${{ inputs.token }}
 
-        if [[ "${TARGET_REPOSITORY}" == "eq19/eq19.github.io" ]]; then echo "www.eq19.com" > "${{ github.workspace }}/docs/CNAME"; fi
-        rm -rf "${{ github.workspace }}/docs/.nojekyll" && touch "${{ github.workspace }}/docs/.nojekyll"
+    - name: Profiling Feedback
+      if: runner.os == 'Windows'
+      uses: eq19/eq19/.github/actions/4-identition/5-syntax@v1
+      id: identition
+      with:
+        token: ${{ inputs.token }}
+        image_name: ${{ inputs.image_name }}
+        credentials: ${{ inputs.credentials }}
+        workspace: ${GITHUB_WORKSPACE//\\//}
+        action_path: ${GITHUB_ACTION_PATH//\\//}
+        hub_token: ${{ inputs.docker_hub_token }} 
+        failure_status: ${{ inputs.failure_status }}
+        hub_username: ${{ inputs.docker_hub_username }}
