@@ -65,7 +65,7 @@ runs:
       id: jekyll_site
       shell: bash
       run: |
-        echo -e "\n$hr\nBuild Pages\n$hr" && cd "${{ github.workspace }}"
+        echo -e "\n$hr\nBuild Pages\n$hr" && cd "${{ inputs.workspace }}"
         #choco install ruby -y && gem install jekyll bundler faraday-retry github-pages --platform=ruby
  
         #Jekyll Quick Reference https://gist.github.com/DrOctogon/bfb6e392aa5654c63d12
