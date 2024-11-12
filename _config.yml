@@ -4,7 +4,7 @@ span: span13
 title: eQuantum
 baseurl: /syntax
 repository: eq19/syntax
-action: eq19/parser/actions/runs/11644031980
+action: eq19/parser/actions/runs/11792496191
 description: An attempt to discover the Final Theory
 
 #debug:
@@ -27,6 +27,7 @@ readme_index:
   with_frontmatter: true
 
 exclude:
+  - vendor
   - LICENSE
   - action.yml  
   - Dockerfile
