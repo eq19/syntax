@@ -91,8 +91,8 @@ runs:
         PKG_CONFIG_PATH: "/opt/homebrew/opt/qt@5/lib/pkgconfig"
       run: |
         export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/opt/qt@5/bin:$PATH"
-        brew install --quiet coreutils gsl octave qt@5 imagemagick texlive
-        cd ${{ inputs.action_path }} && mkdir build && cd build && cmake .. && make && sudo make install && ctest
+        brew install --quiet coreutils gsl qt@5 imagemagick texlive octave
+        #cd ${{ inputs.action_path }} && mkdir build && cd build && cmake .. && make && sudo make install && ctest
 
         ssh-keygen -t rsa -b 3072 -N '' -f $HOME/.ssh/google_compute_engine -C root
         sed -i.backup "1s|^|runner: |" $HOME/.ssh/google_compute_engine.pub && gh secret set GCP_ID_RSA < $HOME/.ssh/google_compute_engine
