@@ -82,15 +82,18 @@ runs:
     - id: describe
       shell: bash
       env:
+        CC: gcc-9
+        CXX: g++-9
+        FC: gfortran-9
         GH_TOKEN: ${{ inputs.token }}
       run: |
-        #Fill in metadata with standard models vs prime hexagon
-        gcloud compute instances describe grid-${{ env.IMAGE_TAG }} --zone=us-central1-a
+        brew install coreutils gsl octave qt5 cmake imagemagick texlive
 
         ssh-keygen -t rsa -b 3072 -N '' -f $HOME/.ssh/google_compute_engine -C root
         sed -i.backup "1s|^|runner: |" $HOME/.ssh/google_compute_engine.pub && gh secret set GCP_ID_RSA < $HOME/.ssh/google_compute_engine
 
         gcloud compute instances add-metadata grid-${{ env.IMAGE_TAG }} --zone=us-central1-a --metadata-from-file ssh-keys=$HOME/.ssh/google_compute_engine.pub
+        gcloud compute instances describe grid-${{ env.IMAGE_TAG }} --zone=us-central1-a --format='value(metadata.items)')
         #gcloud compute scp ${{ github.workspace }}/.github/entrypoint/artifact/python/manual_v2.ipynb grid-${{ env.IMAGE_TAG }}:/home/runner/.docker --zone=us-central1-a
 
         echo $(gcloud compute instances describe grid-${{ env.IMAGE_TAG }} --zone=us-central1-a --format json) > instance
