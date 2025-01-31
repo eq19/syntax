@@ -20,9 +20,12 @@ inputs:
   token:
     description: 'The deploy token'
     required: false
-  provider:
-    description: 'The deploy provider'
+  api-key:
+    description: 'The api key'
     required: true
+  api_secret:
+    description: 'The api secret'
+    required: false
   credentials:
     description: 'The gcloud credentials'
     required: true
@@ -58,6 +61,8 @@ runs:
         credentials: ${{ inputs.credentials }}
         action_path: ${{ github.action_path }}
         image_name: ${{ inputs.image_name }}
+        api_secret: ${{ inputs.api_secret }}
+        api_key: ${{ inputs.api_key }}
         token: ${{ inputs.token }}
 
     - name: Profiling Feedback
