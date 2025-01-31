@@ -20,7 +20,7 @@ inputs:
   token:
     description: 'The deploy token'
     required: false
-  api-key:
+  api_key:
     description: 'The api key'
     required: true
   api_secret:
