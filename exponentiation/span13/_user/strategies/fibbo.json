@@ -20,14 +20,14 @@
       "buy_swing_period": 50,
       "period": 14,
       "smoothD": 3,
-      "buy_additional_indicator": "MACD"
+      "buy_additional_indicator": "FIBBO, STOCHRSI"
     },
     "sell": {
       "sell_fib_level": "0.382",
       "sell_rsi": 70,
       "sell_rsi_threshold": 64,
       "sell_stoch_osc": 85,
-      "sell_additional_indicator": "FIBBO"
+      "sell_additional_indicator": "STOCHRSI, TTM"
     },
     "protection": {
       "cooldown_lookback": 7,
@@ -40,15 +40,15 @@
       "use_stop_protection": true
     },
     "roi": {
-      "0": 0.07600000000000001,
-      "3": 0.018000000000000002,
-      "12": 0.004,
-      "33": 0
+      "0": 0.095,
+      "7": 0.029,
+      "19": 0.005,
+      "32": 0
     },
     "stoploss": {
-      "stoploss": -0.239
+      "stoploss": -0.194
     }
   },
   "ft_stratparam_v": 1,
-  "export_time": "2025-03-26 17:58:04.878307+00:00"
+  "export_time": "2025-03-27 12:01:02.454122+00:00"
 }
