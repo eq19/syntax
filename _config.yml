@@ -1,16 +1,16 @@
-id: 6
+id: 35
 user: eq19
-span: span13
+span: span-16
 title: eQuantum
 baseurl: /syntax
 repository: eq19/syntax
-action: eq19/parser/actions/runs/15310311195
-description: An attempt to discover the Final Theory
+action: eq19/parser/actions/runs/26008672020
+description: An endeavor to discover the Final Theory
 
-#debug:
-#  dist: false
-#  compress: true
-#  shortcodes: true
+debug:
+  dist: false
+  compress: true
+  shortcodes: true
 
 lsi: false
 incremental: true
@@ -34,7 +34,6 @@ exclude:
   - Dockerfile
 
 plugins:
-  - jemoji
   - jekyll-gist
   - jekyll-avatar
   - jekyll-mentions
@@ -48,6 +47,6 @@ plugins:
   - jekyll-optional-front-matter
 
 track:
-  spin: [0, 5]
+  spin: [13, 5]
   pinned: [maps, feed, lexer, parser, syntax, grammar]
   organization: [Chetabahana, FeedMapping, GlobalZones, HybridModels, JunctionTerms, KernelPatterns, MappingSystem, NeuralSystem, ObjectModules, VirtualNetworks, WeakNegative, WeakPositive, ZeroWeak]
