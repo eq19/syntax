@@ -90,14 +90,14 @@ if [[ "${JOBS_ID}" == "1" ]]; then
 
     #git clone --single-branch --branch gh-pages $REMOTE_REPO gh-pages && cd gh-pages
     #git add . && git commit --allow-empty -m "rerun due to job update" && git push
-    gh workflow run "main.yml" --raw-field "RUN_MODE=$RUN_MODE" --raw-field "REDUCE_EPOCH=$REDUCE_EPOCH" --raw-field "REMOVE_RUNNER=$REMOVE_RUNNER"
+    gh workflow run "main.yml" --raw-field "REDUCE_EPOCH=$REDUCE_EPOCH" --raw-field "REMOVE_RUNNER=$REMOVE_RUNNER"
 
   else
 
     if [[ ! -f $RUNNER_TEMP/_config.yml ]]; then set_config $1; fi
     if [[ "$(yq '.repository' $RUNNER_TEMP/_config.yml)" != "$TARGET_REPOSITORY" ]]; then
       echo "$(yq '.repository' $RUNNER_TEMP/_config.yml) != $TARGET_REPOSITORY"
-      gh workflow run "main.yml" --raw-field "RUN_MODE=$RUN_MODE" --raw-field "REDUCE_EPOCH=$REDUCE_EPOCH" --raw-field "REMOVE_RUNNER=$REMOVE_RUNNER"
+      gh workflow run "main.yml" --raw-field "REDUCE_EPOCH=$REDUCE_EPOCH" --raw-field "REMOVE_RUNNER=$REMOVE_RUNNER"
     else
       HEADER="Accept: application/vnd.github+json"
       RESPONSE=$(gh api -H "${HEADER}" repos/$TARGET_REPOSITORY/actions/runners)
@@ -181,6 +181,7 @@ elif [[ "${JOBS_ID}" == "3" ]]; then
     "strategies/utils/__init__.py"
     "strategies/utils/ccxt_patch.py"
     "strategies/utils/indodax_patch.py"
+    "strategies/utils/dataprovider_patch.py"
     "freqaimodels/custom_models.py"
     "freqaimodels/traditional_models.py"
     "ft_client/test_client/app.py"
@@ -376,6 +377,7 @@ fi
         if $DOCKER exec mydb curl -sf -o "$DEST_PATH" "$DOWNLOAD_URL"; then
           if $DOCKER exec mydb test -s "$DEST_PATH"; then
             [[ "$DEST_PATH" == *.sh ]] && $DOCKER exec mydb chmod +x "$DEST_PATH"
+            [[ "$DEST_PATH" == *config_pairlist* ]] && "$DOCKER" exec mydb bash -c "jq '.pairlists = [{\"method\": \"StaticPairList\"}]' \"$DEST_PATH\" > tmp.json && mv tmp.json \"$DEST_PATH\""
             echo "✅ [SUCCESS] Downloaded: $DEST_PATH"
             break
           else
