@@ -473,13 +473,20 @@ elif [[ "${JOBS_ID}" == "3" ]]; then
 
 else
 
-  cd ${RUNNER_TEMP//\\//} && rm -rf gh-source
+  cd ${RUNNER_TEMP//\\//}
+  rm -rf gh-base gh-source
+  
+  git clone https://github.com/eq19/feed gh-base
   git clone --single-branch --branch gh-source $TARGET_REPO gh-source
   
+  cd gh-source
+  rm -rf .git _plugins _layouts _includes
+  mv -f ${RUNNER_TEMP//\\//}/gh-base/_plugins .
+  mv -f ${RUNNER_TEMP//\\//}/gh-base/_layouts .
+  mv -f ${RUNNER_TEMP//\\//}/gh-base/_includes .
+
   cd ${GITHUB_WORKSPACE//\\//}
   find -not -path "./.git/*" -not -name ".git" -delete
-
-  rm -rf ${RUNNER_TEMP//\\//}/gh-source/.git
   shopt -s dotglob && mv -f ${RUNNER_TEMP//\\//}/gh-source/* .
 
   echo -e "\n$hr\nCONFIG\n$hr" && cat _config.yml
