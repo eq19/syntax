@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ "$JOBS_ID" == "1" ]] && exit 0
+
 # Max retries
 max_retries=10
 # Interval between checks (10 retries in 10 minutes -> 60s each)
@@ -24,8 +26,8 @@ for ((i=1; i<=max_retries; i++)); do
     fi
 done
 
-SOURCE_REPOSITORY=$(gh variable get SOURCE_REPOSITORY)
 echo "Condition not fulfilled after $max_retries checks ❌"
+SOURCE_REPOSITORY=$(gh variable get SOURCE_REPOSITORY --repo "$REPO_NAME")
 gh workflow run "main.yml" --repo "$SOURCE_REPOSITORY" --raw-field "RUN_MODE=MEC30" --raw-field "REMOVE_RUNNER=true"
 
 echo "Canceling the current workflow..."
